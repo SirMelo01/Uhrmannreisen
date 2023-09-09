@@ -6,16 +6,32 @@ from django.views import defaults as default_views
 from django.views.generic import TemplateView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
+from uhrmannreisen.views import load_index, kontaktform
+from django.views.generic import RedirectView
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.urls import path, include
+
+from django.contrib.sitemaps.views import sitemap
+from uhrmannreisen.sitemaps import StaticViewSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap
+}
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
+    path("", view=load_index, name="home"),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-    # User management
-    path("users/", include("uhrmannreisen.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("", include('django.contrib.auth.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name="django.contrib.sitemaps.views.sitemap",),
+    path("impressum/", TemplateView.as_view(template_name="pages/impressum.html"), name="impressum"),
+    path("kontakt/", view=kontaktform, name="kontakt"),
+    path("datenschutz/", TemplateView.as_view(template_name="pages/datenschutz.html"), name="datenschutz"),
+    path("cookies/", TemplateView.as_view(template_name="pages/cookies.html"), name="cookies"),
+    path("cms/", include("uhrmannreisen.ycms.urls", namespace="ycms")),
+    path("vorlagen/", include("uhrmannreisen.designtemplates.urls", namespace="designtemplates")),
+    path("blog/", include("uhrmannreisen.blog.urls", namespace="blog")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS
@@ -31,6 +47,7 @@ urlpatterns += [
         name="api-docs",
     ),
 ]
+
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit

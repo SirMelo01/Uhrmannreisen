@@ -2,6 +2,7 @@
 Base settings to build other settings files upon.
 """
 from pathlib import Path
+import os
 
 import environ
 
@@ -69,6 +70,7 @@ DJANGO_APPS = [
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
     "django.forms",
+    "django.contrib.sitemaps",
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
@@ -86,6 +88,9 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "uhrmannreisen.users",
     # Your stuff: custom apps go here
+    "uhrmannreisen.ycms",
+    "uhrmannreisen.designtemplates",
+    "uhrmannreisen.blog",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -142,6 +147,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "uhrmannreisen.middleware.WwwRedirectMiddleware",
 ]
 
 # STATIC
@@ -161,9 +167,21 @@ STATICFILES_FINDERS = [
 # MEDIA
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR / "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = "/media/"
+
+
+DEFAULT_FILE_STORAGE = 'config.settings.cdn.backends.MediaRootS3Boto3Storage'
+AWS_ACCESS_KEY_ID='DO00HJFLRWJCM3RQ6ANW'
+AWS_SECRET_ACCESS_KEY = env(
+    "DIGITAL_OCEAN_SECRET_KEY",
+    default="sLTs3mPUprd3bNcafCVkzcdORA1VFqQn9zHYhGZUhks",
+)
+AWS_STORAGE_BUCKET_NAME='yoolink-django'
+AWS_S3_ENDPOINT_URL='https://fra1.digitaloceanspaces.com/'
+AWS_LOCATION = 'https://yoolink-django.fra1.digitaloceanspaces.com/'
+
 
 # TEMPLATES
 # ------------------------------------------------------------------------------
@@ -310,7 +328,11 @@ ACCOUNT_FORMS = {"signup": "uhrmannreisen.users.forms.UserSignupForm"}
 SOCIALACCOUNT_ADAPTER = "uhrmannreisen.users.adapters.SocialAccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html
 SOCIALACCOUNT_FORMS = {"signup": "uhrmannreisen.users.forms.UserSocialSignupForm"}
-
+# django-compressor
+# ------------------------------------------------------------------------------
+# https://django-compressor.readthedocs.io/en/latest/quickstart/#installation
+INSTALLED_APPS += ["compressor"]
+STATICFILES_FINDERS += ["compressor.finders.CompressorFinder"]
 # django-rest-framework
 # -------------------------------------------------------------------------------
 # django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
@@ -336,3 +358,4 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+SITE_ID = 1
