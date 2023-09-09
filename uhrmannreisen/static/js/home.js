@@ -1,3 +1,33 @@
+var swiper = new Swiper(".slide-content", {
+  slidesPerView: 3,
+  spaceBetween: 50,
+  loop: true,
+  centerSlide: 'true',
+  fade: 'true',
+  grabCursor: 'true',
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints:{
+      0: {
+          slidesPerView: 1,
+      },
+      1024: {
+          slidesPerView: 2,
+      },
+      1400: {
+          slidesPerView: 3,
+      },
+  },
+});
+
 var currentDesktopSlideId = 1;
 var currentHandySlideId = 1;
 // Slider
@@ -20,6 +50,10 @@ const content4 = document.querySelector("#content4");
 const arrow4 = document.querySelector("#arrow4");
 
 const responsive = document.querySelector("#Responsive");
+
+
+
+
 
 //Responsive Design
 
@@ -120,3 +154,6 @@ function showSlide(id) {
 
   
 }
+
+
+
