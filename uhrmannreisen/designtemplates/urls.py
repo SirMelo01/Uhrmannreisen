@@ -1,5 +1,5 @@
 from django.urls import path, include
-from yoolink.designtemplates.views import load_designtemp
+from uhrmannreisen.designtemplates.views import load_designtemp
 from django.views.generic import TemplateView
 
 app_name = "designtemplates"
