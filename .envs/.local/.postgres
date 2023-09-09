@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=uhrmannreisen
+POSTGRES_USER=wbrwUUfvJHaGgxnfCTFTsZuXmExRGmpw
+POSTGRES_PASSWORD=HdbBiz7XjUV7hxIY4iid9NVXJf7UCyrxsooqeY7zUaUIJbcH9LkqsvCxtxtfE3f2
