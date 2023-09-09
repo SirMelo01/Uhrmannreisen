@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./uhrmannreisen/static/css/output.css",
+    "watch": "tailwindcss -i ./input.css -o ./uhrmannreisen/static/css/output.css --watch"
+  }
+}
