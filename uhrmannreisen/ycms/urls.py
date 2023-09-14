@@ -30,12 +30,13 @@ urlpatterns = [
     path('blog/<int:id>/update/', views.update_blog, name='blog-update'),
     # Galery
     path('galerien/', views.galerien, name='galerien'),
+    path('galery/images/update/<int:id>/', views.update_galery_image, name='galery-update-img'),
     path('galery/create/', views.create_galery, name='galery-create'),
     path('galery/getImages/', views.get_galery_images, name='galery-get-images'),
+    path('galery/delete-img/<int:id>/', views.delete_galery_img, name='delete-galery-img'),
     path('galery/<int:id>/', views.galery_view, name='galery-view'),
     path('galery/<int:id>/upload/', views.upload_galery_img, name='upload-galery-img'),
     path('galery/<int:id>/save/', views.save_galery, name='galery-save'),
-    path('galery/delete-img/<int:id>/', views.delete_galery_img, name='delete-galery-img'),
     path('galery/<int:id>/delete/', views.delete_galery, name='galery-delete'),
     path('galerien/all/', views.all_galerien, name="all-galerien"),
     # Seiten
