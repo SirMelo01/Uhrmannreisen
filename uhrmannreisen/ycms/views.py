@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import get_object_or_404, render, redirect
-from yoolink.ycms.models import fileentry, FAQ, Galerie, Blog, GaleryImage, TextContent
+from uhrmannreisen.ycms.models import fileentry, FAQ, Galerie, Blog, GaleryImage, TextContent
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
