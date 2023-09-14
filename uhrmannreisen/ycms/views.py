@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from uhrmannreisen.ycms.models import fileentry, FAQ, Galerie, Blog, GaleryImage, TextContent
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.urls import reverse
+from django.urls import reverses
 from django.http import HttpResponseRedirect, JsonResponse
 from django.http import HttpResponse
 from .forms import fileform, Blogform
