@@ -10,49 +10,45 @@
 
 <div class="container mx-auto mt-8">
     <div class="flex justify-between">
-        <h1 class="text-2xl "><a href="{% url 'cms:sites' %}" class="text-blue-500">Seiten</a> / <a
-                href="{% url 'cms:site_hauptseite' %}" class="text-blue-500">Hauptseite</a> / <span>Hero</span></h1>
-        <div>
-            {% csrf_token %}
-            <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-6 hover:cursor-pointer"
-                id="saveTextData" name="main_hero">
-                Speichern
-            </a>
-        </div>
+       <h1 class="text-2xl "><a href="{% url 'cms:sites' %}" class="text-blue-500">Seiten</a> / <a
+          href="{% url 'cms:site_hauptseite' %}" class="text-blue-500">Hauptseite</a> / <span>Hero</span></h1>
+       <div>
+          {% csrf_token %}
+          <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-6 hover:cursor-pointer"
+             id="saveTextData" name="main_hero">
+          Speichern
+          </a>
+       </div>
     </div>
     <!-- Add Content here -->
-    <section class="bg-gray-100 text-gray-800">
-        <div class="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-            <div class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg ">
-                <input
-                    class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                    id="title" type="text"
-                    value="{% if textContent and textContent.title %}{{textContent.title}}{% else %}Mehr als nur Reisen{% endif %}">
-                <textarea rows="5"
-                    class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                    id="description" type="text">{% if textContent and textContent.description %}{{textContent.description}}{% else %}
-                    Als Familienbetrieb in mittlerweile der 3. Generation, bleiben wir uns und unseren Wurzeln in Fürstenstein treu. Über die Jahre haben wir unser Busunternehmen um eine Tankstelle und einen Waschpark ergänzt.
-                    {% endif %}
-                </textarea>
-                <div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4">
-                        <input id="buttonText"
-                            value="{% if textContent and textContent.buttonText %}{{textContent.buttonText}}{% else %}Neuigkeiten{% endif %}"
-                            class="px-8 py-3 text-lg font-semibold rounded bg-violet-600 text-gray-50"></input>
-                </div>
-            </div>
-            <div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                <div
-                    class="relative lg:mt-16 lg:mb-28 h-auto m-8 -ml-24 w-full overflow-hidden shadow-2xl rounded-md hidden lg:block">
-                    <img class="absolute left-0 top-0 w-[45rem] max-w-none content-image" key="main_hero"
-                        imgId="{% if heroImage %}{{heroImage.id}}{% endif %}"
-                        src="{% if heroImage %}{{ heroImage.file.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
-                        alt="Image">
-                    <span class="absolute top-0 left-0 inline-block px-2 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full not-sortable z-40 hover:cursor-pointer edit-img"><i class="bi bi-pencil-square"></i></span>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+    <div class="grid md:grid-cols-2 w-full">
+       <div class="flex flex-col justify-center p-6 text-center rounded-sm">
+          <input
+             class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+             id="title" type="text"
+             value="{% if textContent and textContent.title %}{{textContent.title}}{% else %}Mehr als nur Reisen{% endif %}">
+          <textarea rows="7"
+             class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+             id="description" type="text">{% if textContent and textContent.description %}{{textContent.description}}{% else %}Als Familienbetrieb in mittlerweile der 3. Generation, bleiben wir uns und unseren Wurzeln in Fürstenstein treu. Über die Jahre haben wir unser Busunternehmen um eine Tankstelle und einen Waschpark ergänzt.{% endif %}
+                 </textarea>
+          <div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 mt-5">
+             <input id="buttonText"
+                value="{% if textContent and textContent.buttonText %}{{textContent.buttonText}}{% else %}Neuigkeiten{% endif %}"
+                class="px-8 py-3 text-lg font-semibold rounded bg-violet-600 text-gray-50"></input>
+          </div>
+       </div>
+       <div class=" items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+          <div
+             class="relative w-full">
+             <img class="rounded-xl w-full max-w-xl content-image h-full" key="main_hero"
+                imgId="{% if heroImage %}{{heroImage.id}}{% endif %}"
+                src="{% if heroImage %}{{ heroImage.file.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
+                alt="Image">
+             <span class="absolute top-0 left-0 inline-block px-2 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full not-sortable z-40 hover:cursor-pointer edit-img"><i class="bi bi-pencil-square"></i></span>
+          </div>
+       </div>
+    </div>
+ </div>
     
     
     {% block javascriptend %}
