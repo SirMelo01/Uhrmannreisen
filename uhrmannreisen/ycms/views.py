@@ -587,37 +587,84 @@ def site_view_main_hero(request):
     return render(request, "pages/cms/content/sites/mainsite/HeroContent.html", data)
 
 @login_required(login_url='login')
-def site_view_main_responsive(request):
+def site_view_main_angebote(request):
     data = {}
-    if TextContent.objects.filter(name="main_responsive").exists():
-        data["textContent"] = TextContent.objects.get(name='main_responsive')
-    return render(request, "pages/cms/content/sites/mainsite/ResponsiveContent.html", data)
+    if TextContent.objects.filter(name="main_angebot").exists():
+        data["textContent"] = TextContent.objects.get(name='main_angebot')
+    return render(request, "pages/cms/content/sites/mainsite/AngeboteContent.html", data)
 
 @login_required(login_url='login')
-def site_view_main_cms(request):
+def site_view_main_busverkehr(request):
     data = {}
-    if TextContent.objects.filter(name="main_cms").exists():
-        data["textContent"] = TextContent.objects.get(name='main_cms')
-    if fileentry.objects.filter(place='main_cms').exists():
-        data["cmsImage"] = fileentry.objects.get(place='main_cms')
-    return render(request, "pages/cms/content/sites/mainsite/CmsContent.html", data)
+    if TextContent.objects.filter(name="main_bus").exists():
+        data["textContent"] = TextContent.objects.get(name='main_bus')
+    if fileentry.objects.filter(place='main_bus').exists():
+        data["busImage"] = fileentry.objects.get(place='main_bus')
+    if TextContent.objects.filter(name="main_bus_text1").exists():
+        data["textContent1"] = TextContent.objects.get(name='main_bus_text1')
+    if TextContent.objects.filter(name="main_bus_text2").exists():
+        data["textContent2"] = TextContent.objects.get(name='main_bus_text2')
+    if TextContent.objects.filter(name="main_bus_text3").exists():
+        data["textContent3"] = TextContent.objects.get(name='main_bus_text3')
+    return render(request, "pages/cms/content/sites/mainsite/BusContent.html", data)
 
 @login_required(login_url='login')
-def site_view_main_price(request):
+def site_view_main_tankstelle(request):
     data = {}
-    if TextContent.objects.filter(name="main_price").exists():
-        data["textContent"] = TextContent.objects.get(name='main_price')
-    return render(request, "pages/cms/content/sites/mainsite/PriceContent.html", data)
+    if TextContent.objects.filter(name="main_tanke").exists():
+        data["textContent"] = TextContent.objects.get(name='main_tanke')
+    if fileentry.objects.filter(place='main_tanke').exists():
+        data["tankeImage"] = fileentry.objects.get(place='main_tanke')
+    if TextContent.objects.filter(name="main_tanke_text1").exists():
+        data["textContent1"] = TextContent.objects.get(name='main_tanke_text1')
+    if TextContent.objects.filter(name="main_tanke_text2").exists():
+        data["textContent2"] = TextContent.objects.get(name='main_tanke_text2')
+    if TextContent.objects.filter(name="main_tanke_text3").exists():
+        data["textContent3"] = TextContent.objects.get(name='main_tanke_text3')
+    return render(request, "pages/cms/content/sites/mainsite/TankeContent.html", data)
 
 @login_required(login_url='login')
-def site_view_main_team(request):
+def site_view_main_autopflege(request):
     data = {}
-    if TextContent.objects.filter(name="main_team").exists():
-        data["textContent"] = TextContent.objects.get(name='main_team')
+    if TextContent.objects.filter(name="main_pflege").exists():
+        data["textContent"] = TextContent.objects.get(name='main_pflege')
+    if fileentry.objects.filter(place='main_pflege').exists():
+        data["pflegeImage"] = fileentry.objects.get(place='main_pflege')
+    if TextContent.objects.filter(name="main_pflege_text1").exists():
+        data["textContent1"] = TextContent.objects.get(name='main_pflege_text1')
+    if TextContent.objects.filter(name="main_pflege_text2").exists():
+        data["textContent2"] = TextContent.objects.get(name='main_pflege_text2')
+    if TextContent.objects.filter(name="main_pflege_text3").exists():
+        data["textContent3"] = TextContent.objects.get(name='main_pflege_text3')
+    return render(request, "pages/cms/content/sites/mainsite/PflegeContent.html", data)
 
-    return render(request, "pages/cms/content/sites/mainsite/TeamContent.html", data)
+@login_required(login_url='login')
+def site_view_main_news(request):
+    data = {}
+    if TextContent.objects.filter(name="main_news").exists():
+        data["textContent"] = TextContent.objects.get(name='main_news')
+    return render(request, "pages/cms/content/sites/mainsite/NewsContent.html", data)
+
+@login_required(login_url='login')
+def site_view_main_career(request):
+    data = {}
+    if TextContent.objects.filter(name="main_career").exists():
+        data["textContent"] = TextContent.objects.get(name='main_career')
+    
+    if TextContent.objects.filter(name="main_career_1").exists():
+        data["careerTextContent1"] = TextContent.objects.get(name='main_career_1')
+    if fileentry.objects.filter(place='main_career_1').exists():
+        data["careerImage1"] = fileentry.objects.get(place='main_career_1')
+        
+    if TextContent.objects.filter(name="main_career_2").exists():
+        data["careerTextContent2"] = TextContent.objects.get(name='main_career_2')
+    if fileentry.objects.filter(place='main_career_2').exists():
+        data["careerImage2"] = fileentry.objects.get(place='main_career_2')
+        
+    return render(request, "pages/cms/content/sites/mainsite/CareerContent.html", data)
 
 
+# Save Text, Images and Galerys
 @login_required(login_url='login')
 def saveTextContent(request):
     if request.method == 'POST':

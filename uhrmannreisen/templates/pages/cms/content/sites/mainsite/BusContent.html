@@ -1,0 +1,142 @@
+{% extends "cmsbase.html" %}
+{% load compress static %}
+{% block title %} {{block.super}} | CMS - Seiteninhalt {% endblock %}
+
+{% block content %}
+
+<!-- Add Includes here -->
+{% include "pages/cms/components/ImageSelectModal.html" %}
+<!-- End Includes -->
+
+<div class="container mx-auto mt-8">
+    <div class="flex justify-between">
+        <h1 class="text-2xl "><a href="{% url 'cms:sites' %}" class="text-blue-500">Seiten</a> / <a
+                href="{% url 'cms:site_hauptseite' %}" class="text-blue-500">Hauptseite</a> / <span>Busverkehr</span></h1>
+        <div>
+            {% csrf_token %}
+            <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-6 hover:cursor-pointer"
+                id="saveTextData" name="main_bus">
+                Speichern
+            </a>
+        </div>
+    </div>
+    <!-- Add Content here -->
+    <section class="bg-gray-100 text-gray-800">
+        <div class="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
+            <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+                <div>
+                    <input
+                        class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                        id="title" type="text"
+                        value="{% if textContent and textContent.title %}{{textContent.title}}{% else %}Busverkehr{% endif %}">
+                    <textarea rows="2"
+                        class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                        id="description" type="text">{% if textContent and textContent.description %}{{textContent.description}}{% else %}
+                        Wir bieten Ihnen nicht nur topmodern ausgestattete Reisebusse, sondern auch individuell an Sie angepasste Serviceleistungen.
+                        {% endif %}
+                    </textarea>
+                    <div class="mt-12 space-y-12">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-violet-600 text-gray-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-content" key="main_bus_text1">
+                                    <input
+                                        class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                        inputType="title" type="text"
+                                        value="{% if busText1 and busText1.title %}{{busText1.title}}{% else %}Linienverkehr{% endif %}">
+                                    <textarea rows="3"
+                                        class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                        inputType="description" type="text">{% if busText1 and busText1.description %}{{busText1.description}}{% else %}
+                                        Seit 2010 sind wir Partner im Passauer Verkehrsbund und bringen Sie auf unseren Linien zuverlässig von A nach B. Näheres finden Sie auf der Website des PVB.
+                                        {% endif %}
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-violet-600 text-gray-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-content" key="main_bus_text2">
+                                    <input
+                                        class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                        inputType="title" type="text"
+                                        value="{% if busText2 and busText2.title %}{{busText2.title}}{% else %}Individualverkehr{% endif %}">
+                                    <textarea rows="3"
+                                        class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                        inputType="description" type="text">{% if busText2 and busText2.description %}{{busText2.description}}{% else %}
+                                        Zu unseren Kunden gehören seit jeher Vereine und Firmen in der Umgebung. Gerne planen wir auch für Sie eine individuelle Busfahrt für Ihr Unternehmen, Ihren Verein, etc.
+                                        {% endif %}
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-violet-600 text-gray-50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-content" key="main_bus_text3">
+                                    <input
+                                        class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                        inputType="title" type="text"
+                                        value="{% if busText3 and busText3.title %}{{busText3.title}}{% else %}Event-Fahrten{% endif %}">
+                                    <textarea rows="3"
+                                        class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                        inputType="description" type="text">{% if busText3 and busText3.description %}{{busText3.description}}{% else %}
+                                        ir kümmern uns nicht nur um Ihr sicheres Ankommen, gerne ergänzen wir Ihren Ausflug um Unterkunft oder Freitzaktivitäten (zum Beispiel Skiurlaube).
+                                        {% endif %}
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div aria-hidden="true" class="mt-10 lg:mt-0">
+                    <div
+                        class="relative lg:mt-16 lg:mb-28 h-auto m-8 -ml-24 w-full overflow-hidden shadow-2xl rounded-md hidden lg:block">
+                        <img class="absolute left-0 top-0 w-[45rem] max-w-none content-image" key="main_bus"
+                            imgId="{% if busImage %}{{busImage.id}}{% endif %}"
+                            src="{% if busImage %}{{ busImage.file.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
+                            alt="Image">
+                        <span class="absolute top-0 left-0 inline-block px-2 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full not-sortable z-40 hover:cursor-pointer edit-img"><i class="bi bi-pencil-square"></i></span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+</div>
+    
+    
+    
+    {% block javascriptend %}
+    {% compress js inline %}
+    <script defer src="{% static 'js/cms.js' %}"></script>
+    <script defer src="{% static 'js/cms/content/siteManager.js' %}"></script>
+    <script src="{% static 'js/cms/content/save-text.js' %}"></script>
+    <script defer>
+        $(document).ready(function () {
+            loadImages(false);
+        })
+    </script>
+    <!-- Needed for Galery -->
+    {% endcompress js %}
+    {% endblock javascriptend %}
+
+    {% endblock content %}

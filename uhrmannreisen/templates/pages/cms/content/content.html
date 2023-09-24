@@ -20,14 +20,10 @@
 
 </div>
 
-
-
   {% block javascriptend %}
     {% compress js inline %}
       <script defer src="{% static 'js/cms.js' %}"></script>
     {% endcompress js %}
   {% endblock javascriptend %}
-
-
 
 {% endblock content %}
