@@ -20,8 +20,97 @@
             </a>
         </div>
     </div>
-</div>
+
     <!-- Add Content here -->
+
+    <div class="grid md:grid-cols-2 w-full">
+        <div class="flex flex-col justify-center p-6 text-center rounded-sm">
+            <input
+                class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                id="title" type="text"
+                value="{% if textContent and textContent.title %}{{textContent.title}}{% else %}Tankstelle{% endif %}">
+            <textarea rows="4"
+                class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                id="description" type="text">{% if textContent and textContent.description %}{{textContent.description}}{% else %}In der Vilshofener Straße 6 steht seit 2010 unsere neue Tankstelle. Zusammen mit unserem Partner Shell bieten wir neben Qualitätskraftstoffen ein großer Sortiment an Snacks, Zeitschriften, Tabakwaren und Getränken an.{% endif %}
+            </textarea>
+            <div class="mt-12 space-y-12">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-md bg-violet-600 text-gray-50">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <div class="text-content" key="main_tanke_text1">
+                            <input
+                                class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                inputType="title" type="text"
+                                value="{% if textContent1 and textContent1.title %}{{textContent1.title}}{% else %}Lotto-Annahmestelle{% endif %}">
+                            <textarea rows="5"
+                                class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                inputType="description" type="text">{% if textContent1 and textContent1.description %}{{textContent1.description}}{% else %}Bei uns können sämtliche Glücksspieleangebote wie Lotto, Totto oder Bayernlos der bayrischen Glücksspielgesellschaft wahrgenommen werden.{% endif %}
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-md bg-violet-600 text-gray-50">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <div class="text-content" key="main_tanke_text2">
+                            <input
+                                class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                inputType="title" type="text"
+                                value="{% if textContent2 and textContent2.title %}{{textContent2.title}}{% else %}Hermes-Paketstation{% endif %}">
+                            <textarea rows="5"
+                                class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                inputType="description" type="text">{% if textContent2 and textContent2.description %}{{textContent2.description}}{% else %}Wir sind Partner des Lieferdienstes Hermes und nehmen für Sie Pakete aller Art entgegen.{% endif %}
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-md bg-violet-600 text-gray-50">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <div class="text-content" key="main_tanke_text3">
+                            <input
+                                class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                inputType="title" type="text"
+                                value="{% if textContent3 and textContent3.title %}{{textContent3.title}}{% else %}Bankautomat{% endif %}">
+                            <textarea rows="5"
+                                class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                                inputType="description" type="text">{% if textContent3 and textContent3.description %}{{textContent3.description}}{% else %}In unserer Tankstelle steht ein Geldautomat der Raiffeisenbank während unserer Öffnungszeiten für Sie zur Verfügung.{% endif %}
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+            <div class="relative w-full">
+                <img class="rounded-xl w-full max-w-xl content-image h-full" key="main_tanke"
+                    imgId="{% if tankeImage %}{{tankeImage.id}}{% endif %}"
+                    src="{% if tankeImage %}{{ tankeImage.file.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
+                    alt="Image">
+                <span class="absolute top-0 left-0 inline-block px-2 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full not-sortable z-40 hover:cursor-pointer edit-img"><i class="bi bi-pencil-square"></i></span>
+            </div>
+        </div>
+    </div>
+</div>
+
     
     
     {% block javascriptend %}
