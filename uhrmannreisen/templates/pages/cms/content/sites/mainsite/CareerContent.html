@@ -20,8 +20,85 @@
             </a>
         </div>
     </div>
-</div>
+
     <!-- Add Content here -->
+
+
+        <div>
+            <input
+                class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                id="title" type="text"
+                value="{% if textContent and textContent.title %}{{textContent.title}}{% else %}Karriere bei Uhrmann Reisen{% endif %}">
+            <textarea rows="2"
+                class="bg-gray-200 text-center rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                id="description" type="text">{% if textContent and textContent.description %}{{textContent.description}}{% else %}Hier finden Sie unsere aktuellen Stellenangebote{% endif %}
+            </textarea>
+        </div>
+
+
+
+
+        <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+            <div class="grid gap-8 row-gap-5 md:grid-cols-2">
+              <div class="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm group hover:shadow-xl">
+                <div class="relative flex flex-col h-full p-5 bg-white rounded-sm lg:items-center lg:flex-row">
+                  <div class="mb-6 mr-6 lg:mb-0">
+                    <div class="flex items-center justify-center w-20 h-20 rounded-full bg-indigo-50 lg:w-32 lg:h-32">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" />
+                          </svg>
+                          
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between flex-grow">
+                    <div class="text-content" key="main_career_1">
+                        <input
+                            class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-base font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                            id="title" type="text"
+                            value="{% if careerText1 and careerText1.title %}{{careerText1.title}}{% else %}Busfahrer m/w/d{% endif %}">
+                        <textarea rows="5"
+                            class="bg-gray-200 text-center rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-sm text-gray-800 md:text-sm leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                            id="description" type="text">{% if careerText1 and careerText1.description %}{{careerText1.description}}{% else %}Sie sind Busfahrer und auf der Suche nach einer neuen Herausfoderung? Rufen sie uns einfach bei uns an und wir bereden unkompliziert die Details.{% endif %}
+                        </textarea>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
+                <div class="relative flex flex-col h-full p-5 bg-white rounded-sm lg:items-center lg:flex-row">
+                  <div class="mb-6 mr-6 lg:mb-0">
+                    <div class="flex items-center justify-center w-20 h-20 rounded-full bg-indigo-50 lg:w-32 lg:h-32">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" />
+                          </svg>
+                          
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between flex-grow">
+                    <div class="text-content" key="main_career_2">
+                        <input
+                            class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-base font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                            id="title" type="text"
+                            value="{% if careerText2 and careerText2.title %}{{careerText2.title}}{% else %}Tankstellenmitarbeiter m/w/d{% endif %}">
+                        <textarea rows="5"
+                            class="bg-gray-200 text-center rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-sm text-gray-800 md:text-sm leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                            id="description" type="text">{% if careerText2 and careerText2.description %}{{careerText2.description}}{% else %}Wir suchen immer nach Verstärkung für unser Tankstellenteam. Ob Vollzeit, Teilzeit oder Minijob, bei Interesse rufen Sie uns doch einfach an!{% endif %}
+                        </textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+</div>
     
     
     {% block javascriptend %}
