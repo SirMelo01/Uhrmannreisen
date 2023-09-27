@@ -35,7 +35,7 @@ $(document).ready(function () {
         });
 
         requestData.customText = JSON.stringify(customText);
-        
+        console.log(customText)
         // Check if the element with ID 'header' exists before adding it to requestData
         if ($('#header').length > 0) {
             requestData.header = $('#header').val();
