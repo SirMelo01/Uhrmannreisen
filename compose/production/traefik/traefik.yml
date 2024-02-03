@@ -22,7 +22,7 @@ certificatesResolvers:
   letsencrypt:
     # https://docs.traefik.io/master/https/acme/#lets-encrypt
     acme:
-      email: 'yoolink@uhrmannreisen.de'
+      email: 'yoolink@uhrmann-reisen.de'
       storage: /etc/traefik/acme/acme.json
       # https://docs.traefik.io/master/https/acme/#httpchallenge
       httpChallenge:
@@ -31,7 +31,7 @@ certificatesResolvers:
 http:
   routers:
     web-secure-router:
-      rule: 'Host(`uhrmannreisen.de`) || Host(`www.uhrmannreisen.de`)'
+      rule: 'Host(`uhrmann-reisen.de`) || Host(`www.uhrmann-reisen.de`)'
       entryPoints:
         - web-secure
       middlewares:
@@ -42,7 +42,7 @@ http:
         certResolver: letsencrypt
 
     flower-secure-router:
-      rule: 'Host(`uhrmannreisen.de`)'
+      rule: 'Host(`uhrmann-reisen.de`)'
       entryPoints:
         - flower
       service: flower
@@ -51,7 +51,7 @@ http:
         certResolver: letsencrypt
 
     web-media-router:
-      rule: '(Host(`uhrmannreisen.de`) || Host(`www.uhrmannreisen.de`)) && PathPrefix(`/media/`)'
+      rule: '(Host(`uhrmann-reisen.de`) || Host(`www.uhrmann-reisen.de`)) && PathPrefix(`/media/`)'
       entryPoints:
         - web-secure
       middlewares:

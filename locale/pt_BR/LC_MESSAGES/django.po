@@ -1,6 +1,6 @@
 # Translations for the Uhrmannreisen project
 # Copyright (C) 2023 YooLink
-# YooLink <yoolink@uhrmannreisen.de>, 2023.
+# YooLink <yoolink@uhrmann-reisen.de>, 2023.
 #
 #, fuzzy
 msgid ""

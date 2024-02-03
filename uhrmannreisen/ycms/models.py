@@ -8,6 +8,8 @@ from PIL import Image
 from django.db.models.signals import post_save
 from uhrmannreisen.users.models import User
 from django.utils.text import slugify
+from django.urls import reverse
+
 
 
 ## Produktiv und funktioniert
@@ -81,7 +83,7 @@ def default_code():
     return dict()
 class Blog(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, default='default-slug')
+    slug = models.SlugField(unique=True, default='default-slug', max_length=255)
     title_image = models.ImageField(upload_to=upload_to_blog_image, default="", blank=True)
     date = models.DateField(auto_now_add=True)  # Automatically set on creation
     last_updated = models.DateField(auto_now=True)  # Automatically updated on save
@@ -103,6 +105,8 @@ class Blog(models.Model):
 
         # Call the parent class's save method to actually save the model
         super(Blog, self).save(*args, **kwargs)
+    def get_absolute_url(self):
+        return reverse("blog:blog-detail", kwargs={"pk": self.pk, "slug_title": self.slug})
     
 
 class Message(models.Model):
