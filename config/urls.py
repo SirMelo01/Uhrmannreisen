@@ -27,11 +27,11 @@ urlpatterns = [
     path("", include('django.contrib.auth.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name="django.contrib.sitemaps.views.sitemap",),
     path("impressum/", TemplateView.as_view(template_name="pages/impressum.html"), name="impressum"),
-    path("kontakt/", view=kontaktform, name="kontakt"),
+    # path("kontakt/", view=kontaktform, name="kontakt"),
     path("datenschutz/", TemplateView.as_view(template_name="pages/datenschutz.html"), name="datenschutz"),
     path("cookies/", TemplateView.as_view(template_name="pages/cookies.html"), name="cookies"),
     path("cms/", include("uhrmannreisen.ycms.urls", namespace="ycms")),
-    path("vorlagen/", include("uhrmannreisen.designtemplates.urls", namespace="designtemplates")),
+    # path("vorlagen/", include("uhrmannreisen.designtemplates.urls", namespace="designtemplates")),
     path("blog/", include("uhrmannreisen.blog.urls", namespace="blog")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

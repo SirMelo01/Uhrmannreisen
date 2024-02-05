@@ -12,7 +12,7 @@ from io import BytesIO
 from django.core import serializers
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
-
+from django.views.generic import ListView
 
 @login_required(login_url='login')
 def upload(request):

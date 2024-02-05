@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
-from uhrmannreisen.ycms.models import FAQ, Message, TextContent, fileentry, Galerie, GaleryImage
+from uhrmannreisen.ycms.models import FAQ, Message, TextContent, fileentry, Galerie, GaleryImage, Blog
 import datetime
 from django.http import HttpResponseRedirect
 
 
 def load_index(request):
     faq = FAQ.objects.all()
+    blog = Blog.objects.all()
 
     context = {
         'FAQ': faq,
+        'Blog': blog,
     }
 
     # Hero Section
