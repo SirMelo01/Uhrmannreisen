@@ -45,9 +45,9 @@
       
       <!--Landing Section-->
       <section class="bg-gray-100 text-gray-800">
-          <div class="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+          <div class="container max-w-screen-xl lg:p-10 flex flex-col justify-center mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
               <div class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg ">
-                  <h1 class="text-5xl font-bold leadi sm:text-5xl">
+                  <h1 class="text-4xl font-bold leadi sm:text-5xl text-gray-900">
                     
                     Mehr als nur Reisen.
                   </h1>
@@ -60,9 +60,14 @@
                       </a>
                   </div>
               </div>
+              <div class="flex items-center justify-center p-6 md:p-0">
+                <img src="{% static 'images/placeholder.png' %}" alt="" class="object-contain max-h-96 shadow-2xl">
+              </div>
+              <!--
               <div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                   <img src="{% static 'images/placeholder.png' %}" alt="" class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 shadow-2xl">
               </div>
+              -->
           </div>
       </section>
   
@@ -73,7 +78,7 @@
                   <h2 class="text-3xl font-bold tracki text-center sm:text-5xl text-gray-900">Unser Angebot im Überblick.</h2>
                   <p class="max-w-3xl mx-auto mt-4 text-xl text-center text-gray-600">Busverkehr, Tankstelle und Autopflege</p>
               </div>
-              <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+              <div class="scroll-mt-24 grid lg:gap-8 lg:grid-cols-2 lg:items-center" id="Busverkehr">
                   <div>
                       <h3 class="text-2xl font-bold tracki sm:text-3xl text-gray-900">Busverkehr</h3>
                       <p class="mt-3 text-lg text-gray-600"> <a href="#">Wir bieten Ihnen nicht nur topmodern ausgestattete Reisebusse, sondern auch individuell an Sie angepasste Serviceleistungen.</a></p>

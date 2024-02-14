@@ -40,10 +40,8 @@
            Released under the MIT license
            https://jquery.org/license/ -->
     {% endcompress js %}
-    <script src="https://code.jquery.com/jquery-3.6.4.js"
-        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
-
+    <script src="{% static 'js/libs/jquery-3.7.0.min.js' %}"></script>
 
     {% block css %}
     {% endblock css %}
@@ -60,17 +58,17 @@
     <section class="sticky top-0 z-50 bg-slate-100 ">
       <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div class="relative flex items-center justify-between">
-          <a href="/" aria-label="Firma" title="Firma" class="inline-flex items-center">
+          <a href="{% url 'home' %}" aria-label="Uhrmann Reisen" title="Uhrmann Reisen" class="inline-flex items-center">
             <span class="ml-2 text-3xl font-bold tracking-wide text-[#592e86]">Uhrmann Reisen</span>
           </a>
           <ul class="hidden items-center  space-x-8 xl:flex">
             
-            <li><a href="#" aria-label="Busunternehmen" title="Busunternehmen" class="font-medium tracking-wide text-gray-700 costume costume1 ">Busverkehr</a></li>
-            <li><a href="#" aria-label="Tankstelle" title="Tankstelle" class="font-medium tracking-wide text-gray-700 costume costume1">Tankstelle</a></li>
-            <li><a href="#" aria-label="Autopflege" title="Autopflege" class="font-medium tracking-wide text-gray-700 costume costume1">Autopflege</a></li>
-            <li><a href="#" aria-label="News" title="News" class="font-medium tracking-wide text-gray-700 costume costume1">News</a></li>
-            <li><a href="#" aria-label="Jobs" title="Jobs" class="font-medium tracking-wide text-gray-700 costume costume1">Jobs</a></li>
-            <li><a href="#" aria-label="Kontakt" title="Kontakt" class="font-medium tracking-wide text-gray-700 costume costume1">Kontakt</a></li>
+            <li><a href="{% url 'home' %}#Busverkehr" aria-label="Busunternehmen" title="Busunternehmen" class="font-medium tracking-wide text-gray-700 costume costume1 ">Busverkehr</a></li>
+            <li><a href="{% url 'home' %}#Tankstelle" aria-label="Tankstelle" title="Tankstelle" class="font-medium tracking-wide text-gray-700 costume costume1">Tankstelle</a></li>
+            <li><a href="{% url 'home' %}#Autopflege" aria-label="Autopflege" title="Autopflege" class="font-medium tracking-wide text-gray-700 costume costume1">Autopflege</a></li>
+            <li><a href="{% url 'home' %}#News" aria-label="News" title="News" class="font-medium tracking-wide text-gray-700 costume costume1">News</a></li>
+            <li><a href="{% url 'home' %}#Jobs" aria-label="Jobs" title="Jobs" class="font-medium tracking-wide text-gray-700 costume costume1">Jobs</a></li>
+            <li><a href="{% url 'home' %}#Kontakt" aria-label="Kontakt" title="Kontakt" class="font-medium tracking-wide text-gray-700 costume costume1">Kontakt</a></li>
           </ul>
           <ul class="hidden items-center  space-x-8 xl:flex">
             <li>
@@ -261,7 +259,7 @@
               </div>
               <div class="flex">
                 <p class="mr-1 text-gray-800">Adresse:</p>
-                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">
+                <a href="https://www.google.com/maps/place/Vilshofener+Str.+4,+94538+F%C3%BCrstenstein/@48.7156117,13.3263684,17z/data=!4m6!3m5!1s0x4774fb79b4b74753:0x2c307189902fcd2b!8m2!3d48.7156007!4d13.3290794!16s%2Fg%2F11c43yl_hp?entry=ttu" target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">
                   Vilshofener Straße 4
                   <p> 94538 Fürstenstein</p>
                 </a>
@@ -270,7 +268,7 @@
             <div>
               <span class="text-base font-bold tracking-wide text-gray-900">Soziale Medien</span>
               <div class="flex items-center mt-1 space-x-3">
-                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                <a href="https://www.instagram.com/uhrmann.reisen/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
                   <svg viewBox="0 0 30 30" fill="currentColor" class="h-6">
                     <circle cx="15" cy="15" r="4"></circle>
                     <path
@@ -278,7 +276,7 @@
                     ></path>
                   </svg>
                 </a>
-                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                <a href="https://www.facebook.com/p/Shell-Station-Uhrmann-100057332175395" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
                   <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
                     <path
                       d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
@@ -297,13 +295,13 @@
             </p>
             <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
               <li>
-                <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Cookies</a>
+                <a href="{% url 'cookies' %}" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Cookies</a>
               </li>
               <li>
-                <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Datenschutz</a>
+                <a href="{% url 'datenschutz' %}" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Datenschutz</a>
               </li>
               <li>
-                <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Impressum</a>
+                <a href="{% url 'impressum' %}" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Impressum</a>
               </li>
             </ul>
           </div>
