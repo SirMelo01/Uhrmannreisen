@@ -131,12 +131,12 @@
                 </div>
                 <nav>
                   <ul class="space-y-4">
-                    <li><a href="#" aria-label="Busunternehmen" title="Busunternehmen" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Busverkehr</a></li>
-            <li><a href="#" aria-label="Tankstelle" title="Tankstelle" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Tankstelle</a></li>
-            <li><a href="#" aria-label="Autopflege" title="Autopflege" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Autopflege</a></li>
-            <li><a href="#" aria-label="News" title="News" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">News</a></li>
-            <li><a href="#" aria-label="Jobs" title="Jobs" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Jobs</a></li>
-            <li><a href="#" aria-label="Kontakt" title="Kontakt" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Kontakt</a></li>
+                    <li><a href="{% url 'home' %}#Busverkehr" aria-label="Busunternehmen" title="Busunternehmen" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Busverkehr</a></li>
+                    <li><a href="{% url 'home' %}#Tankstelle" aria-label="Tankstelle" title="Tankstelle" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Tankstelle</a></li>
+                    <li><a href="{% url 'home' %}#Autopflege" aria-label="Autopflege" title="Autopflege" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Autopflege</a></li>
+                    <li><a href="{% url 'home' %}#News" aria-label="News" title="News" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">News</a></li>
+                    <li><a href="{% url 'home' %}#Jobs" aria-label="Jobs" title="Jobs" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Jobs</a></li>
+                    <li><a href="{% url 'home' %}#Kontakt" aria-label="Kontakt" title="Kontakt" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Kontakt</a></li>
                     <li>
                       <a
                         href="tel:850-123-5021"
@@ -231,7 +231,7 @@
     <!--Footer Beginn-->
     {% block footer %}
      <section class="bg-slate-100">
-      <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8" id="Kontakt">
           <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
             <div class="sm:col-span-2">
               <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">

@@ -15,18 +15,18 @@ def load_index(request):
 
     # Hero Section
     if TextContent.objects.filter(name="main_hero").exists():
-        context["textContent"] = TextContent.objects.get(name='main_hero')
+        context["heroText"] = TextContent.objects.get(name='main_hero')
         
     if fileentry.objects.filter(place='main_hero').exists():
         context["heroImage"] = fileentry.objects.get(place='main_hero')
 
     # Angebote
     if TextContent.objects.filter(name="main_angebot").exists():
-        context["textContent"] = TextContent.objects.get(name='main_angebot')
+        context["angebotText"] = TextContent.objects.get(name='main_angebot')
 
     # Busverkehr Section
     if TextContent.objects.filter(name="main_bus").exists():
-        context["textContent"] = TextContent.objects.get(name='main_bus')
+        context["busText"] = TextContent.objects.get(name='main_bus')
         
     if fileentry.objects.filter(place='main_bus').exists():
         context["busImage"] = fileentry.objects.get(place='main_bus')
@@ -43,7 +43,7 @@ def load_index(request):
         
     # Tankstelle Section
     if TextContent.objects.filter(name="main_tanke").exists():
-        context["textContent"] = TextContent.objects.get(name='main_tanke')
+        context["tankeText"] = TextContent.objects.get(name='main_tanke')
         
     if fileentry.objects.filter(place='main_tanke').exists():
         context["tankeImage"] = fileentry.objects.get(place='main_tanke')
@@ -60,7 +60,7 @@ def load_index(request):
         
     # Pflege Section
     if TextContent.objects.filter(name="main_pflege").exists():
-        context["textContent"] = TextContent.objects.get(name='main_pflege')
+        context["pflegeText"] = TextContent.objects.get(name='main_pflege')
         
     if fileentry.objects.filter(place='main_pflege').exists():
         context["pflegeImage"] = fileentry.objects.get(place='main_pflege')
@@ -77,11 +77,11 @@ def load_index(request):
         
     # News Section
     if TextContent.objects.filter(name="main_news").exists():
-        context["textContent"] = TextContent.objects.get(name='main_news')
+        context["newsText"] = TextContent.objects.get(name='main_news')
 
     # Career Section
     if TextContent.objects.filter(name="main_career").exists():
-        context["textContent"] = TextContent.objects.get(name='main_career')
+        context["careerText"] = TextContent.objects.get(name='main_career')
         
     # Career Untersection
     if TextContent.objects.filter(name="main_career_1").exists():

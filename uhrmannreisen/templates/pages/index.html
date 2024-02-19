@@ -48,26 +48,20 @@
           <div class="container max-w-screen-xl lg:p-10 flex flex-col justify-center mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
               <div class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg ">
                   <h1 class="text-4xl font-bold leadi sm:text-5xl text-gray-900">
-                    
-                    Mehr als nur Reisen.
+                    {{heroText.title}}
                   </h1>
                   <p class="mt-6 mb-8 text-lg sm:mb-12">
-                    Als Familienbetrieb in mittlerweile der 3. Generation, bleiben wir uns und unseren Wurzeln in Fürstenstein treu. Über die Jahre haben wir unser Busunternehmen um eine Tankstelle und einen Waschpark ergänzt.
+                    {{heroText.description}}
                   </p>
                   <div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4">
-                      <a rel="noopener noreferrer" href="#" class="px-8 py-3 text-lg font-semibold rounded bg-[#592e86] text-gray-50 transition-transform duration-300 hover:scale-105  hover:shadow-xl">
-                        Neuigkeiten
+                      <a rel="noopener noreferrer" href="#News" class="px-8 py-3 text-lg font-semibold rounded bg-[#592e86] text-gray-50 transition-transform duration-300 hover:scale-105  hover:shadow-xl">
+                        {{heroText.buttonText}}
                       </a>
                   </div>
               </div>
               <div class="flex items-center justify-center p-6 md:p-0">
-                <img src="{% static 'images/placeholder.png' %}" alt="" class="object-contain max-h-96 shadow-2xl">
+                <img class="object-contain max-h-96 shadow-2xl" title="{% if heroImage %}{{heroImage.title}}{% endif %}" src="{% if heroImage %}{{heroImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"  alt="{% if heroImage %}{{heroImage.title}}{% endif %}">
               </div>
-              <!--
-              <div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                  <img src="{% static 'images/placeholder.png' %}" alt="" class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 shadow-2xl">
-              </div>
-              -->
           </div>
       </section>
   
@@ -75,13 +69,13 @@
       <section class="bg-gray-100 text-gray-800">
           <div class="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
               <div>
-                  <h2 class="text-3xl font-bold tracki text-center sm:text-5xl text-gray-900">Unser Angebot im Überblick.</h2>
-                  <p class="max-w-3xl mx-auto mt-4 text-xl text-center text-gray-600">Busverkehr, Tankstelle und Autopflege</p>
+                  <h2 class="text-3xl font-bold tracki text-center sm:text-5xl text-gray-900">{{angebotText.title}}</h2>
+                  <p class="max-w-3xl mx-auto mt-4 text-xl text-center text-gray-600">{{angebotText.description}}</p>
               </div>
               <div class="scroll-mt-24 grid lg:gap-8 lg:grid-cols-2 lg:items-center" id="Busverkehr">
                   <div>
-                      <h3 class="text-2xl font-bold tracki sm:text-3xl text-gray-900">Busverkehr</h3>
-                      <p class="mt-3 text-lg text-gray-600"> <a href="#">Wir bieten Ihnen nicht nur topmodern ausgestattete Reisebusse, sondern auch individuell an Sie angepasste Serviceleistungen.</a></p>
+                      <h3 class="text-2xl font-bold tracki sm:text-3xl text-gray-900">{{busText.title}}</h3>
+                      <p class="mt-3 text-lg text-gray-600">{{busText.description}}</p>
                       <div class="mt-12 space-y-12">
                           <div class="flex">
                               <div class="flex-shrink-0">
@@ -92,8 +86,8 @@
                                   </div>
                               </div>
                               <div class="ml-4">
-                                  <h4 class="text-lg font-medium leadi text-gray-900">Linienverkehr</h4>
-                                  <p class="mt-2 text-gray-600">Seit 2010 sind wir Partner im Passauer Verkehrsbund und bringen Sie auf unseren Linien zuverläassig von A nach B. Näheres finden Sie auf der Website des PVB.</p>
+                                  <h4 class="text-lg font-medium leadi text-gray-900">{{busText1.title}}</h4>
+                                  <p class="mt-2 text-gray-600">{{busText1.description}}</p>
                               </div>
                           </div>
                           <div class="flex">
@@ -105,8 +99,8 @@
                                   </div>
                               </div>
                               <div class="ml-4">
-                                  <h4 class="text-lg font-medium leadi text-gray-900">Individualverkehr</h4>
-                                  <p class="mt-2 text-gray-600">Zu unseren Kunden gehören seit jeher Vereine und Firmen in der Umgebung. Gerne planen wir auch für Sie eine individuelle Busfahrt für Ihr Unternehmen, Ihren Verein, etc.</p>
+                                  <h4 class="text-lg font-medium leadi text-gray-900">{{busText2.title}}</h4>
+                                  <p class="mt-2 text-gray-600">{{busText2.description}}</p>
                               </div>
                           </div>
                           <div class="flex">
@@ -118,21 +112,21 @@
                                   </div>
                               </div>
                               <div class="ml-4">
-                                  <h4 class="text-lg font-medium leadi text-gray-900">Event-Fahrten</h4>
-                                  <p class="mt-2 text-gray-600">Wir kümmern uns nicht nur um Ihr sicheres Ankommen, gerne ergänzen wir Ihren Ausflug um Unterkunft oder Freitzaktivitäten (zum Beispiel Skiurlaube).</p>
+                                  <h4 class="text-lg font-medium leadi text-gray-900">{{busText3.title}}</h4>
+                                  <p class="mt-2 text-gray-600">{{busText3.description}}</p>
                               </div>
                           </div>
                       </div>
                   </div>
                   <div aria-hidden="true" class="mt-10 lg:mt-0">
-                      <img src="{% static 'images/placeholder.png' %}" alt="" class="mx-auto rounded-lg shadow-lg bg-gray-500">
+                    <img class="mx-auto rounded-lg shadow-lg bg-gray-500" title="{% if busImage %}{{busImage.title}}{% endif %}" src="{% if busImage %}{{busImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"  alt="{% if busImage %}{{busImage.title}}{% endif %}">
                   </div>
               </div>
               <div>
-                  <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+                  <div class="scroll-mt-24 grid lg:gap-8 lg:grid-cols-2 lg:items-center" id="Tankstelle">
                       <div class="lg:col-start-2">
-                          <h3 class="text-2xl font-bold tracki sm:text-3xl text-gray-900">Tankstelle</h3>
-                          <p class="mt-3 text-lg text-gray-600">In der Vilshofener Straße 6 steht seit 2010 unsere neue Tankstelle. Zusammen mit unserem Partner Shell bieten wir neben Qualitätskraftstoffen ein großer Sortiment an Snacks, Zeitschriften, Tabakwaren und Getränken an. </p>
+                          <h3 class="text-2xl font-bold tracki sm:text-3xl text-gray-900">{{tankeText.title}}</h3>
+                          <p class="mt-3 text-lg text-gray-600">{{tankeText.description}}</p>
                           <div class="mt-12 space-y-12">
                               <div class="flex">
                                   <div class="flex-shrink-0">
@@ -143,8 +137,8 @@
                                       </div>
                                   </div>
                                   <div class="ml-4">
-                                      <h4 class="text-lg font-medium leadi text-gray-900">Lotto-Annahmestelle</h4>
-                                      <p class="mt-2 text-gray-600">Bei uns können sämtliche Glücksspieleangebote wie Lotto, Totto oder Bayernlos der bayrischen Glücksspielgesellschaft wahrgenommen werden. </p>
+                                      <h4 class="text-lg font-medium leadi text-gray-900">{{tankeText1.title}}</h4>
+                                      <p class="mt-2 text-gray-600">{{tankeText1.description}}</p>
                                   </div>
                               </div>
                               <div class="flex">
@@ -156,8 +150,8 @@
                                       </div>
                                   </div>
                                   <div class="ml-4">
-                                      <h4 class="text-lg font-medium leadi text-gray-900">Hermes-Paketstation</h4>
-                                      <p class="mt-2 text-gray-600">Wir sind Partner des Lieferdienstes Hermes und nehmen für Sie Pakete aller Art entgegen.</p>
+                                      <h4 class="text-lg font-medium leadi text-gray-900">{{tankeText2.title}}</h4>
+                                      <p class="mt-2 text-gray-600">{{tankeText2.description}}</p>
                                   </div>
                               </div>
                               <div class="flex">
@@ -169,21 +163,21 @@
                                       </div>
                                   </div>
                                   <div class="ml-4">
-                                      <h4 class="text-lg font-medium leadi text-gray-900">Bankautomat</h4>
-                                      <p class="mt-2 text-gray-600">In unserer Tankstelle steht ein Geldautomat der Raiffeisenbank während unserer Öffnungszeiten für Sie zur Verfügung.</p>
+                                      <h4 class="text-lg font-medium leadi text-gray-900">{{tankeText3.title}}</h4>
+                                      <p class="mt-2 text-gray-600">{{tankeText3.description}}</p>
                                   </div>
                               </div>
                           </div>
                       </div>
                       <div class="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
-                          <img src="{% static 'images/placeholder.png' %}" alt="" class="mx-auto rounded-lg shadow-lg bg-gray-500">
+                        <img class="mx-auto rounded-lg shadow-lg bg-gray-500" title="{% if tankeImage %}{{tankeImage.title}}{% endif %}" src="{% if tankeImage %}{{tankeImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"  alt="{% if tankeImage %}{{tankeImage.title}}{% endif %}">
                       </div>
                   </div>
               </div>
-              <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+              <div class="scroll-mt-24 grid lg:gap-8 lg:grid-cols-2 lg:items-center" id="Autopflege">
                   <div>
-                      <h3 class="text-2xl font-bold tracki sm:text-3xl text-gray-900">Autopflege</h3>
-                      <p class="mt-3 text-lg text-gray-600">Bei uns wird Autopflege groß geschrieben, ob vollautomatisch oder per Hand. Nach einem Besuch bei uns sieht Ihr Auto aus wie neu.</p>
+                      <h3 class="text-2xl font-bold tracki sm:text-3xl text-gray-900">{{pflegeText.title}}</h3>
+                      <p class="mt-3 text-lg text-gray-600">{{pflegeText.description}}</p>
                       <div class="mt-12 space-y-12">
                           <div class="flex">
                               <div class="flex-shrink-0">
@@ -194,8 +188,8 @@
                                   </div>
                               </div>
                               <div class="ml-4">
-                                  <h4 class="text-lg font-medium leadi text-gray-900">Waschpark</h4>
-                                  <p class="mt-2 text-gray-600">In unserem mit dem Marktführer Waschtec neu errichteten Waschpark bringen Sie Ihren Wagen mit neuester Technik wieder auf Hochglanz.</p>
+                                  <h4 class="text-lg font-medium leadi text-gray-900">{{pflegeText1.title}}</h4>
+                                  <p class="mt-2 text-gray-600">{{pflegeText1.description}}</p>
                               </div>
                           </div>
                           <div class="flex">
@@ -207,8 +201,8 @@
                                   </div>
                               </div>
                               <div class="ml-4">
-                                  <h4 class="text-lg font-medium leadi text-gray-900">Waschstraße</h4>
-                                  <p class="mt-2 text-gray-600">Neben unserem Waschpark befindet sich auch eine moderne und vollautomatische Waschstraße von Shell. Einfach zurücklehnen, während die Waschstraße ihr Auto pflegt.</p>
+                                  <h4 class="text-lg font-medium leadi text-gray-900">{{pflegeText2.title}}</h4>
+                                  <p class="mt-2 text-gray-600">{{pflegeText2.description}}</p>
                               </div>
                           </div>
                           <div class="flex">
@@ -220,14 +214,14 @@
                                   </div>
                               </div>
                               <div class="ml-4">
-                                  <h4 class="text-lg font-medium leadi text-gray-900">Autobedarf</h4>
-                                  <p class="mt-2 text-gray-600">In unserem Shop bieten wir Ihnen zudem eine Auswahl an hochwertigen Produkten rund um's Fahrzeug.</p>
+                                  <h4 class="text-lg font-medium leadi text-gray-900">{{pflegeText3.title}}</h4>
+                                  <p class="mt-2 text-gray-600">{{pflegeText3.description}}</p>
                               </div>
                           </div>
                       </div>
                   </div>
                   <div aria-hidden="true" class="mt-10 lg:mt-0">
-                      <img src="{% static 'images/placeholder.png' %}" alt="" class="mx-auto rounded-lg shadow-lg bg-gray-500">
+                      <img class="mx-auto rounded-lg shadow-lg bg-gray-500" title="{% if pflegeImage %}{{pflegeImage.title}}{% endif %}" src="{% if pflegeImage %}{{pflegeImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"  alt="{% if pflegeImage %}{{pflegeImage.title}}{% endif %}">
                   </div>
               </div>
           </div>
@@ -239,8 +233,8 @@
 
 
       <section class="bg-slate-100">
-          <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-              <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+          <div class="scroll-mt-2 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20" id="News">
+              <div class="max-w-xl mb-0 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                
                 <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                    Neuigkeiten
@@ -333,9 +327,9 @@
   
       <!--Jobs-->
       <section class="bg-slate-100">
-          <div>
-              <h2 class="text-3xl font-bold  text-center sm:text-5xl text-gray-900">Karriere bei Uhrmann Reisen</h2>
-              <p class="max-w-3xl mx-auto mt-4 text-xl text-center text-gray-600">Hier finden Sie unsere aktuellen Stellenangebote</p>
+          <div class="scroll-mt-24" id="Jobs">
+              <h2 class="text-3xl font-bold  text-center sm:text-5xl text-gray-900">{{careerText.title}}</h2>
+              <p class="max-w-3xl mx-auto mt-4 text-xl text-center text-gray-600">{{careerText.description}}</p>
           </div>
           <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
               <div class="grid gap-8 row-gap-5 md:grid-cols-2">
@@ -357,10 +351,10 @@
                     <div class="flex flex-col justify-between flex-grow">
                       <div>
                         <h6 class="mb-2 font-semibold leading-5">
-                          Busfahrer m/w/d
+                          {{careerText1.title}}
                         </h6>
                         <p class="mb-2 text-sm text-gray-900">
-                         Sie sind Busfahrer und auf der Suche nach einer neuen Herausfoderung? Rufen sie uns einfach bei uns an und wir bereden unkompliziert die Details.
+                          {{careerText1.description}}
                         </p>
                       </div>
                     </div>
@@ -384,10 +378,10 @@
                     <div class="flex flex-col justify-between flex-grow">
                       <div>
                         <h6 class="mb-2 font-semibold leading-5">
-                          Tankstellenmitarbeiter m/w/d
+                          {{careerText2.title}}
                         </h6>
                         <p class="mb-2 text-sm text-gray-900">
-                         Wir suchen immer nach Verstärkung für unser Tankstellenteam. Ob Vollzeit, Teilzeit oder Minijob, bei Interesse rufen Sie uns doch einfach an!
+                          {{careerText2.description}}
                         </p>
                       </div>
                     </div>
