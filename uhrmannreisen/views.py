@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 
 def load_index(request):
     faq = FAQ.objects.all()
-    blog = Blog.objects.all()
+    blog = Blog.objects.filter(active=True)
 
     context = {
         'FAQ': faq,
