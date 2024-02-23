@@ -73,7 +73,7 @@
           <ul class="hidden items-center  space-x-8 xl:flex">
             <li>
               <a
-                href="tel:850-123-5021"
+                href="tel:0850491600"
                 class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white  rounded shadow-md  ease-linear duration-300 hover:bg-[#592e86] transition-transform hover:scale-105  hover:shadow-xl"
                 aria-label="Anrufen"
                 title="Anrufen"
@@ -87,7 +87,7 @@
             </li>
             <li>
               <a
-                href="mailto:max.mustermann@muster.mail"
+                href="mailto:uhrmann.reisen@gmx.de"
                 class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white  rounded shadow-md  ease-linear duration-300 hover:bg-[#592e86] transition-transform hover:scale-105  hover:shadow-xl"
                 aria-label="E-Mail"
                 title="E-Mail"
@@ -139,7 +139,7 @@
                     <li><a href="{% url 'home' %}#Kontakt" aria-label="Kontakt" title="Kontakt" class="font-medium tracking-wide text-gray-700 hover:underline " onclick="toggle()">Kontakt</a></li>
                     <li>
                       <a
-                        href="tel:850-123-5021"
+                        href="tel:0850491600"
                         class="flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white  rounded shadow-md transition ease-linear duration-500 hover:bg-[#592e86]"
                         aria-label="Anrufen"
                         title="Anrufen"
@@ -151,7 +151,7 @@
                     </li>
                     <li>
                       <a
-                        href="mailto:max.mustermann@muster.mail"
+                        href="mailto:uhrmann.reisen@gmx.de"
                         class="flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white  rounded shadow-md transition ease-linear duration-500 hover:bg-[#592e86]"
                         aria-label="E-Mail"
                         title="E-Mail"
@@ -250,18 +250,17 @@
             <div class="space-y-2 text-sm">
               <p class="text-base font-bold tracking-wide text-gray-900">Kontakt</p>
               <div class="flex">
-                <p class="mr-1 text-gray-800">Telefon:</p>
-                <a href="tel:850-123-5021" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">08504/91600</a>
+                <span class="mr-1 text-gray-800">Telefon:</span>
+                <a href="tel:0850491600" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">08504/91600</a>
               </div>
               <div class="flex">
-                <p class="mr-1 text-gray-800">Email:</p>
-                <a href="mailto:info@lorem.mail" aria-label="Our email" title="Our email" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">uhrmann.reisen@gmx.de</a>
+                <span class="mr-1 text-gray-800">Email:</span>
+                <a href="mailto:uhrmann.reisen@gmx.de" aria-label="Our email" title="Our email" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">uhrmann.reisen@gmx.de</a>
               </div>
               <div class="flex">
-                <p class="mr-1 text-gray-800">Adresse:</p>
+                <span class="mr-1 text-gray-800">Adresse:</span>
                 <a href="https://www.google.com/maps/place/Vilshofener+Str.+4,+94538+F%C3%BCrstenstein/@48.7156117,13.3263684,17z/data=!4m6!3m5!1s0x4774fb79b4b74753:0x2c307189902fcd2b!8m2!3d48.7156007!4d13.3290794!16s%2Fg%2F11c43yl_hp?entry=ttu" target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">
-                  Vilshofener Straße 4
-                  <p> 94538 Fürstenstein</p>
+                  Vilshofener Straße 4, 94538 Fürstenstein
                 </a>
               </div>
             </div>
@@ -291,7 +290,7 @@
           </div>
           <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
             <p class="text-sm text-gray-600">
-              © Uhrmann Reisen GmbH 2024. Designed and hosted by <a class="lin" href="https://yoolink.de/">YooLink</a>.
+              © Uhrmann Reisen GmbH {% load tz %} {% now "Y" %}. Designed and hosted by <a class="lin" href="https://yoolink.de/">YooLink</a>.
             </p>
             <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
               <li>
