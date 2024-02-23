@@ -299,6 +299,7 @@ def create_blog(request):
             return JsonResponse({'error': 'Ein Blog mit diesem Titel existiert bereits!'}, status=400)
 
         body = request.POST.get('body')
+        description = request.POST.get('description', '')
         code = json.loads(request.POST.get('code'))
         active = request.POST.get('active', False)
         
@@ -318,6 +319,7 @@ def create_blog(request):
             scaled_image = scale_image(resized_image)
             compressed_image = compress_image(scaled_image)
             blog.title_image = compressed_image
+            blog.description = description
             blog.save()
             return JsonResponse({'success': 'Blog successfully created', 'blogId': blog.id}, status=201)
 
@@ -331,6 +333,7 @@ def create_blog(request):
     else:
         return JsonResponse({'error': 'Invalid request method. Only POST requests are allowed.'}, status=400)
 
+
 @login_required(login_url='login')
 def update_blog(request, id):
     if request.method == 'POST':
@@ -341,6 +344,7 @@ def update_blog(request, id):
         title = request.POST.get('title')
         if blog.title != title and Blog.objects.filter(title=title).exists():
             return JsonResponse({'error': 'Ein Blog mit diesem Titel existiert bereits!'}, status=400)
+        description = request.POST.get('description', '')
         body = request.POST.get('body')
         code = json.loads(request.POST.get('code'))
         active = request.POST.get('active', False)
@@ -348,6 +352,7 @@ def update_blog(request, id):
 
         if title:
             # Create
+            blog.description = description
             blog.title = title
             blog.body = body 
             blog.code = code 

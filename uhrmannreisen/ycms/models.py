@@ -91,6 +91,7 @@ class Blog(models.Model):
     body = models.TextField(default="This Blog is empty")
     code = models.JSONField(default=default_code)
     active = models.BooleanField(default=False)
+    description = models.TextField(default="")
 
     def delete(self, *args, **kwargs):
         self.title_image.storage.delete(self.title_image.name)
