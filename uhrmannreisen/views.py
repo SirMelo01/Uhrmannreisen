@@ -24,6 +24,10 @@ def load_index(request):
     if TextContent.objects.filter(name="main_angebot").exists():
         context["angebotText"] = TextContent.objects.get(name='main_angebot')
 
+    # News Section
+    if TextContent.objects.filter(name="main_news").exists():
+        context["newsText"] = TextContent.objects.get(name='main_news')
+
     # Busverkehr Section
     if TextContent.objects.filter(name="main_bus").exists():
         context["busText"] = TextContent.objects.get(name='main_bus')
