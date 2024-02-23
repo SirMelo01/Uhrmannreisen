@@ -747,6 +747,11 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1058,6 +1063,10 @@ video {
   min-height: 100%;
 }
 
+.\!w-full {
+  width: 100% !important;
+}
+
 .w-1 {
   width: 0.25rem;
 }
@@ -1318,6 +1327,16 @@ video {
 
 .animate-fade-in-down {
   animation: fade-in-down 1.2s ease-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 
 .cursor-pointer {
@@ -1927,6 +1946,11 @@ video {
   padding-right: 0.25rem;
 }
 
+.px-11 {
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2382,6 +2406,14 @@ video {
   opacity: 1;
 }
 
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
 .opacity-95 {
   opacity: 0.95;
 }
@@ -2736,12 +2768,6 @@ video {
   background-color: rgb(89 46 134 / var(--tw-bg-opacity));
 }
 
-.after\:bg-blue-900::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-
 .after\:bg-neutral-100::after {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
@@ -2819,22 +2845,16 @@ video {
   border-style: none;
 }
 
-.checked\:after\:bg-blue-500:checked::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
-.checked\:after\:bg-blue-900:checked::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-
 .checked\:after\:bg-\[\#592e86\]:checked::after {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(89 46 134 / var(--tw-bg-opacity));
+}
+
+.checked\:after\:bg-blue-500:checked::after {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .checked\:after\:shadow-\[0_3px_1px_-2px_rgba\(0\2c 0\2c 0\2c 0\.2\)\2c _0_2px_2px_0_rgba\(0\2c 0\2c 0\2c 0\.14\)\2c _0_1px_5px_0_rgba\(0\2c 0\2c 0\2c 0\.12\)\]:checked::after {
