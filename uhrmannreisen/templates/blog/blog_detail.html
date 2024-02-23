@@ -6,6 +6,7 @@
 <!-- Add the slick-theme.css if you want default styling -->
 <link rel="stylesheet" type="text/css" href="{% static 'css/cms/slick/slick-theme.css' %}" />
 <link href="{% static 'css/prism/prism.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/blog.css' %}" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block title %}{{block.super}} | Blog | {{ blog.title }}{% endblock title %}
@@ -37,7 +38,7 @@
             
             <br /><br /><br /><br />
             <a href="{% url 'blog:blog' %}"
-                class="bg-[#592e86] inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md">
+                class="bg-blue-900 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md">
                 Zurück
             </a>
         </article>
