@@ -33,7 +33,7 @@ class FAQ(models.Model):
 
 ## Produktiv und funktioniert
 class fileentry(models.Model):
-    file = models.ImageField(upload_to='yoolink/')
+    file = models.ImageField(upload_to='uhrmann/')
     uploaddate = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=200, default="Bildtitel")
     place = models.CharField(max_length=60, default="")
@@ -49,7 +49,7 @@ class fileentry(models.Model):
         super(fileentry, self).delete(*args, **kwargs) 
 
 def upload_to_galery_image(instance, filename):
-    return f"yoolink/galery/{instance.id}/{filename}"
+    return f"uhrmann/galery/{instance.id}/{filename}"
 class GaleryImage(models.Model):
     upload = models.ImageField(upload_to=upload_to_galery_image,)
     uploaddate = models.DateTimeField(auto_now_add=True)
@@ -78,7 +78,7 @@ class Galerie(models.Model):
         return self.title
 
 def upload_to_blog_image(instance, filename):
-    return f"yoolink/blogs/{instance.id}/{filename}"
+    return f"uhrmann/blogs/{instance.id}/{filename}"
 def default_code():
     return dict()
 class Blog(models.Model):

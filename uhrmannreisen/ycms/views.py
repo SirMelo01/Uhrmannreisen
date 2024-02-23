@@ -122,7 +122,7 @@ def update_file(request, id):
 @login_required(login_url='login')
 def delete_file_by_name(request, name):
     try:
-        cName = "yoolink/" + name
+        cName = "uhrmann/" + name
         docs = fileentry.objects.filter(file=cName)
         for doc in docs:
             doc.delete()
