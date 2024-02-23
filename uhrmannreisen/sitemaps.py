@@ -11,7 +11,6 @@ class StaticViewSitemap(Sitemap):
         return [
             'home',
             'impressum', 'datenschutz', 'cookies', 
-            'designtemplates:designtemplates', 'designtemplates:portfolio', 'designtemplates:handwerksbtrieb',
             'blog:blog'
             ]
     
