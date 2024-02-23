@@ -285,7 +285,7 @@
                   <a href="{% url 'blog:blog-detail' pk=blog.pk slug_title=blog.slug  %}"
                     class="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700">{{blog.title}}</a>
                   <p class="mb-2 text-gray-700">
-                    ...
+                    {{ blog.description|slice:":150"|safe }}...
                   </p>
                   <a href="{% url 'blog:blog-detail' pk=blog.pk slug_title=blog.slug  %}" aria-label=""
                     class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Mehr</a>
