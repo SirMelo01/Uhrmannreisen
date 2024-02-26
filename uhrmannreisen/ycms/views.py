@@ -11,6 +11,7 @@ from PIL import Image
 from io import BytesIO
 from django.core import serializers
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.urls import reverse
 
 from django.views.generic import ListView
 
