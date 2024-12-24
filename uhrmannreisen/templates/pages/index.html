@@ -133,7 +133,7 @@
               <img
                 class="mx-auto rounded-lg shadow-lg bg-gray-500"
                 title="{{img.title}}"
-                src="{{img.file.url}}"
+                src="{{img.upload.url}}"
                 alt="{{img.title}}"
               />
             </div>
@@ -214,7 +214,7 @@
               <img
                 class="mx-auto rounded-lg shadow-lg bg-gray-500"
                 title="{{img.title}}"
-                src="{{img.file.url}}"
+                src="{{img.upload.url}}"
                 alt="{{img.title}}"
               />
             </div>
@@ -287,12 +287,7 @@
             </div>
           </div>
         </div>
-        <div aria-hidden="true" class="mt-10 lg:mt-0">
-          <img class="mx-auto rounded-lg shadow-lg bg-gray-500"
-            title="{% if pflegeImage %}{{pflegeImage.title}}{% endif %}"
-            src="{% if pflegeImage %}{{pflegeImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
-            alt="{% if pflegeImage %}{{pflegeImage.title}}{% endif %}">
-        </div>
+        
         <!-- Swiper Container -->
         <div aria-hidden="true" class="mt-10 lg:mt-0 swiper container mx-auto max-w-2xl px-2 md:px-0">
           <div class="swiper-wrapper">
@@ -302,7 +297,7 @@
               <img
                 class="mx-auto rounded-lg shadow-lg bg-gray-500"
                 title="{{img.title}}"
-                src="{{img.file.url}}"
+                src="{{img.upload.url}}"
                 alt="{{img.title}}"
               />
             </div>
