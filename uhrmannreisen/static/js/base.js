@@ -53,3 +53,29 @@ function refuseCookie() {
 }
 
 cookieRefresh();
+
+if (!window.location.pathname.includes("cms")) {
+  // Swiper Slider
+  const swiper = new Swiper('.swiper', {
+    speed: 400,
+    spaceBetween: 100,
+    loop: true, // Aktiviert das endlose Swipen
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false, // Autoplay nach Benutzung der Buttons nicht deaktivieren
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true, // Bullets anklickbar machen
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true,
+    },
+  });
+}

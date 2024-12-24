@@ -124,10 +124,34 @@
             </div>
           </div>
         </div>
-        <div aria-hidden="true" class="mt-10 lg:mt-0">
-          <img class="mx-auto rounded-lg shadow-lg bg-gray-500" title="{% if busImage %}{{busImage.title}}{% endif %}"
-            src="{% if busImage %}{{busImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
-            alt="{% if busImage %}{{busImage.title}}{% endif %}">
+        <!-- Swiper Container -->
+        <div aria-hidden="true" class="mt-10 lg:mt-0 swiper container mx-auto max-w-2xl px-2 md:px-0">
+          <div class="swiper-wrapper">
+            {% if busGalery %}
+            {% for img in busGalery %}
+            <div class="swiper-slide">
+              <img
+                class="mx-auto rounded-lg shadow-lg bg-gray-500"
+                title="{{img.title}}"
+                src="{{img.file.url}}"
+                alt="{{img.title}}"
+              />
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="swiper-slide">
+              <img
+                class="mx-auto rounded-lg shadow-lg bg-gray-500"
+                title="{% if busImage %}{{busImage.title}}{% endif %}"
+                src="{% if busImage %}{{busImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
+                alt="{% if busImage %}{{busImage.title}}{% endif %}"
+              />
+            </div>
+            {% endif %}
+          </div>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Navigation -->
         </div>
       </div>
       <div>
@@ -180,12 +204,38 @@
               </div>
             </div>
           </div>
-          <div class="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
-            <img class="mx-auto rounded-lg shadow-lg bg-gray-500"
-              title="{% if tankeImage %}{{tankeImage.title}}{% endif %}"
-              src="{% if tankeImage %}{{tankeImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
-              alt="{% if tankeImage %}{{tankeImage.title}}{% endif %}">
+          
+          <!-- Swiper Container -->
+        <div aria-hidden="true" class="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1 swiper container mx-auto max-w-2xl px-2 md:px-0">
+          <div class="swiper-wrapper">
+            {% if tankeGalery %}
+            {% for img in tankeGalery %}
+            <div class="swiper-slide">
+              <img
+                class="mx-auto rounded-lg shadow-lg bg-gray-500"
+                title="{{img.title}}"
+                src="{{img.file.url}}"
+                alt="{{img.title}}"
+              />
+            </div>
+            {% endfor %}
+            {% else %}
+            
+            <div class="swiper-slide">
+              <img
+                class="mx-auto rounded-lg shadow-lg bg-gray-500"
+                title="{% if tankeImage %}{{tankeImage.title}}{% endif %}"
+                src="{% if tankeImage %}{{tankeImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
+                alt="{% if tankeImage %}{{tankeImage.title}}{% endif %}"
+              />
+            </div>
+          
+            {% endif %}
           </div>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Navigation -->
+        </div>
         </div>
       </div>
       <div class="scroll-mt-24 grid lg:gap-8 lg:grid-cols-2 lg:items-center" id="Autopflege">
@@ -242,6 +292,35 @@
             title="{% if pflegeImage %}{{pflegeImage.title}}{% endif %}"
             src="{% if pflegeImage %}{{pflegeImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
             alt="{% if pflegeImage %}{{pflegeImage.title}}{% endif %}">
+        </div>
+        <!-- Swiper Container -->
+        <div aria-hidden="true" class="mt-10 lg:mt-0 swiper container mx-auto max-w-2xl px-2 md:px-0">
+          <div class="swiper-wrapper">
+            {% if pflegeGalery %}
+            {% for img in pflegeGalery %}
+            <div class="swiper-slide">
+              <img
+                class="mx-auto rounded-lg shadow-lg bg-gray-500"
+                title="{{img.title}}"
+                src="{{img.file.url}}"
+                alt="{{img.title}}"
+              />
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="swiper-slide">
+              <img
+                class="mx-auto rounded-lg shadow-lg bg-gray-500"
+                title="{% if pflegeImage %}{{pflegeImage.title}}{% endif %}"
+                src="{% if pflegeImage %}{{pflegeImage.file.url}}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
+                alt="{% if pflegeImage %}{{pflegeImage.title}}{% endif %}"
+              />
+            </div>
+            {% endif %}
+          </div>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Navigation -->
         </div>
       </div>
     </div>

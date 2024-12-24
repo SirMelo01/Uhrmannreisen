@@ -20,16 +20,18 @@
 
     {% compress css inline %}
       <link href="{% static 'css/output.css' %}" rel="stylesheet">
+      <link href="{% static 'css/swiper-bundle.min.css' %}" rel="stylesheet">
     {% endcompress css %}
 
     {% compress js inline %}
       <script defer src="{% static 'js/loadinit.js' %}"></script>
-      <!-- jQuery Bibliothek (https://jquery.com/)
+      
+        <script src="{% static 'js/libs/swiper-bundle.min.js' %}"></script>
+    {% endcompress js %}
+<!-- jQuery Bibliothek (https://jquery.com/)
            Copyright jQuery Foundation and other contributors
            Released under the MIT license
            https://jquery.org/license/ -->
-    {% endcompress js %}
-
     <script src="{% static 'js/libs/jquery-3.7.0.min.js' %}"></script>
 
     {% block css %}

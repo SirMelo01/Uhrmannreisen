@@ -100,6 +100,18 @@ def load_index(request):
     if fileentry.objects.filter(place='main_career_2').exists():
         context["careerImage2"] = fileentry.objects.get(place='main_career_2')
 
+    # Galery
+    if Galerie.objects.filter(place='main_bus').exists():
+        galerie = Galerie.objects.get(place='main_bus')
+        context["busGalery"] = galerie.images.all()
+
+    if Galerie.objects.filter(place='main_tanke').exists():
+        galerie = Galerie.objects.get(place='main_tanke')
+        context["tankeGalery"] = galerie.images.all()
+
+    if Galerie.objects.filter(place='main_pflege').exists():
+        galerie = Galerie.objects.get(place='main_pflege')
+        context["pflegeGalery"] = galerie.images.all()
 
     """ Galery
     if Galerie.objects.filter(place='main_hero').exists():
