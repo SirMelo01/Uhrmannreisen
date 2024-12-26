@@ -604,8 +604,9 @@ def site_view_main_busverkehr(request):
     data = {}
     if TextContent.objects.filter(name="main_bus").exists():
         data["textContent"] = TextContent.objects.get(name='main_bus')
-    if fileentry.objects.filter(place='main_bus').exists():
-        data["busImage"] = fileentry.objects.get(place='main_bus')
+    # Get Galery for Bus
+    if Galerie.objects.filter(place='main_bus').exists():
+        data['galeryImages'] = Galerie.objects.get(place='main_bus').images.all()
     if TextContent.objects.filter(name="main_bus_text1").exists():
         data["textContent1"] = TextContent.objects.get(name='main_bus_text1')
     if TextContent.objects.filter(name="main_bus_text2").exists():
@@ -613,6 +614,22 @@ def site_view_main_busverkehr(request):
     if TextContent.objects.filter(name="main_bus_text3").exists():
         data["textContent3"] = TextContent.objects.get(name='main_bus_text3')
     return render(request, "pages/cms/content/sites/mainsite/BusContent.html", data)
+
+@login_required(login_url='login')
+def site_view_main_taxi(request):
+    data = {}
+    if TextContent.objects.filter(name="main_taxi").exists():
+        data["textContent"] = TextContent.objects.get(name='main_taxi')
+    # Get Galery for Taxi
+    if Galerie.objects.filter(place='main_taxi').exists():
+        data['galeryImages'] = Galerie.objects.get(place='main_taxi').images.all()
+    if TextContent.objects.filter(name="main_taxi_text1").exists():
+        data["textContent1"] = TextContent.objects.get(name='main_taxi_text1')
+    if TextContent.objects.filter(name="main_taxi_text2").exists():
+        data["textContent2"] = TextContent.objects.get(name='main_taxi_text2')
+    if TextContent.objects.filter(name="main_taxi_text3").exists():
+        data["textContent3"] = TextContent.objects.get(name='main_taxi_text3')
+    return render(request, "pages/cms/content/sites/mainsite/TaxiContent.html", data)
 
 @login_required(login_url='login')
 def site_view_main_tankstelle(request):

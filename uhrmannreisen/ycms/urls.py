@@ -48,6 +48,7 @@ urlpatterns = [
     path('seiten/hauptseite/Busverkehr/', views.site_view_main_busverkehr, name='site_hauptseite_busverkehr'),
     path('seiten/hauptseite/Tankstelle/', views.site_view_main_tankstelle, name='site_hauptseite_tankstelle'),
     path('seiten/hauptseite/Pflege/', views.site_view_main_autopflege, name='site_hauptseite_autopflege'),
+    path('seiten/hauptseite/Taxi/', views.site_view_main_taxi, name='site_hauptseite_taxi'),
     path('seiten/hauptseite/News/', views.site_view_main_news, name='site_hauptseite_news'),
     path('seiten/hauptseite/Karriere/', views.site_view_main_career, name='site_hauptseite_career'),
 ]

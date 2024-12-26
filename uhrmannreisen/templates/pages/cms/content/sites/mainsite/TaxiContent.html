@@ -19,11 +19,11 @@
 <div class="container mx-auto mt-8">
     <div class="flex justify-between">
         <h1 class="text-2xl "><a href="{% url 'cms:sites' %}" class="text-blue-500">Seiten</a> / <a
-                href="{% url 'cms:site_hauptseite' %}" class="text-blue-500">Hauptseite</a> / <span>Busverkehr</span></h1>
+                href="{% url 'cms:site_hauptseite' %}" class="text-blue-500">Hauptseite</a> / <span>Taxi</span></h1>
         <div>
             {% csrf_token %}
             <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-6 hover:cursor-pointer"
-                id="saveTextData" name="main_bus">
+                id="saveTextData" name="main_taxi">
                 Speichern
             </a>
         </div>
@@ -34,10 +34,10 @@
                     <input
                         class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                         id="title" type="text"
-                        value="{% if textContent and textContent.title %}{{textContent.title}}{% else %}Busverkehr{% endif %}">
+                        value="{% if textContent and textContent.title %}{{textContent.title}}{% else %}Taxi{% endif %}">
                     <textarea rows="4"
                         class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                        id="description" type="text">{% if textContent and textContent.description %}{{textContent.description}}{% else %}Wir bieten Ihnen nicht nur topmodern ausgestattete Reisebusse, sondern auch individuell an Sie angepasste Serviceleistungen.{% endif %}
+                        id="description" type="text">{% if textContent and textContent.description %}{{textContent.description}}{% else %}Hier erfahrt ihr mehr über unser Taxiservice{% endif %}
                     </textarea>
                     <div class="mt-12 space-y-12">
                         <div class="flex">
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="ml-4">
-                                <div class="text-content" key="main_bus_text1">
+                                <div class="text-content" key="main_taxi_text1">
                                     <input
                                         class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                                         inputType="title" type="text"
@@ -70,14 +70,14 @@
                                 </div>
                             </div>
                             <div class="ml-4">
-                                <div class="text-content" key="main_bus_text2">
+                                <div class="text-content" key="main_taxi_text2">
                                     <input
                                         class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                                         inputType="title" type="text"
                                         value="{% if textContent2 and textContent2.title %}{{textContent2.title}}{% else %}Individualverkehr{% endif %}">
                                     <textarea rows="5"
                                         class="bg-gray-200 rounded-lg appearance-none border-2 border-gray-200 w-full py-2 px-4 text-base text-gray-800 md:text-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                                        inputType="description" type="text">{% if textContent2 and textContent2.description %}{{textContent2.description}}{% else %}Zu unseren Kunden gehören seit jeher Vereine und Firmen in der Umgebung. Gerne planen wir auch für Sie eine individuelle Busfahrt für Ihr Unternehmen, Ihren Verein, etc.{% endif %}
+                                        inputType="description" type="text">{% if textContent2 and textContent2.description %}{{textContent2.description}}{% else %}Weitere Infos über unser Taxiservice{% endif %}
                                     </textarea>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                             <div class="ml-4">
-                                <div class="text-content" key="main_bus_text3">
+                                <div class="text-content" key="main_taxi_text3">
                                     <input
                                         class="bg-gray-200 mt-3 appearance-none text-center border-2 border-gray-200 rounded-lg w-full inline-block py-2 px-4 mb-6 text-2xl font-bold tracking-tight text-teal-900 uppercase leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                                         inputType="title" type="text"
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <div class="items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                    <div class="galery-container relative justify-center max-w-3xl w-full mt-4" galery-id="-1" key="main_bus">
+                    <div class="galery-container relative justify-center max-w-3xl w-full mt-4" galery-id="-1" key="main_taxi">
                         <span class="absolute top-0 left-0 inline-block px-2 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full z-40 hover:cursor-pointer edit-galery"><i class="bi bi-pencil-square"></i></span>
                         <div class="carousel rounded-lg">
                             {% if galeryImages %}

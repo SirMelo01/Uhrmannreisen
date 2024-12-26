@@ -61,6 +61,20 @@ def load_index(request):
         
     if TextContent.objects.filter(name="main_tanke_text3").exists():
         context["tankeText3"] = TextContent.objects.get(name='main_tanke_text3')
+
+    # Tankstelle Section
+    if TextContent.objects.filter(name="main_taxi").exists():
+        context["taxiText"] = TextContent.objects.get(name='main_taxi')
+
+    # Tankstelle Untersection
+    if TextContent.objects.filter(name="main_taxi_text1").exists():
+        context["taxiText1"] = TextContent.objects.get(name='main_taxi_text1')
+        
+    if TextContent.objects.filter(name="main_taxi_text2").exists():
+        context["taxiText2"] = TextContent.objects.get(name='main_taxi_text2')
+        
+    if TextContent.objects.filter(name="main_taxi_text3").exists():
+        context["taxiText3"] = TextContent.objects.get(name='main_taxi_text3')
         
     # Pflege Section
     if TextContent.objects.filter(name="main_pflege").exists():
@@ -113,12 +127,13 @@ def load_index(request):
         galerie = Galerie.objects.get(place='main_pflege')
         context["pflegeGalery"] = galerie.images.all()
 
+    if Galerie.objects.filter(place='main_taxi').exists():
+        galerie = Galerie.objects.get(place='main_taxi')
+        context["taxiGalery"] = galerie.images.all()
+
     """ Galery
     if Galerie.objects.filter(place='main_hero').exists():
         context["heroImages"] = Galerie.objects.get(place='main_hero').images.all() """
-        
-        
-    
 
     return render(request, 'pages/index.html', context=context)
 
