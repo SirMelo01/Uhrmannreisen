@@ -2,10 +2,18 @@
 {% load compress static %}
 {% block title %} {{block.super}} | CMS - Seiteninhalt {% endblock %}
 
+<!-- Needed for Galery (Slick) -->
+{% block javascript %}
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/cms/slick/slick-carousel.css' %}" />
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/cms/slick/slick-theme.css' %}" />
+{% endblock %}
+
 {% block content %}
 
 <!-- Add Includes here -->
-{% include "pages/cms/components/ImageSelectModal.html" %}
+{% include "pages/cms/components/GalerySelectModal.html" %}
 <!-- End Includes -->
 
 <div class="container mx-auto mt-8">
@@ -100,12 +108,26 @@
             </div>
         </div>
         <div class="items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-            <div class="relative w-full">
-                <img class="rounded-xl w-full max-w-xl content-image h-full" key="main_tanke"
-                    imgId="{% if tankeImage %}{{tankeImage.id}}{% endif %}"
-                    src="{% if tankeImage %}{{ tankeImage.file.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
-                    alt="Image">
-                <span class="absolute top-0 left-0 inline-block px-2 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full not-sortable z-40 hover:cursor-pointer edit-img"><i class="bi bi-pencil-square"></i></span>
+            <div class="galery-container relative justify-center max-w-3xl w-full mt-4" galery-id="-1" key="main_tanke">
+                <span class="absolute top-0 left-0 inline-block px-2 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full z-40 hover:cursor-pointer edit-galery"><i class="bi bi-pencil-square"></i></span>
+                <div class="carousel rounded-lg">
+                    {% if galeryImages %}
+                        {% for img in galeryImages %}
+                        <div>
+                            <img src="{{img.upload.url}}" alt="{{img.title}}" class="w-full rounded-xl h-96" />
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                    <div>
+                        <img src="{% static 'images/placeholder.png' %}" 
+                            alt="Template Design" class="w-full rounded-xl h-96"/>
+                    </div>
+                    <div>
+                        <img src="{% static 'images/placeholder.png' %}" 
+                            alt="Template Design" class="w-full rounded-xl h-96"/>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
@@ -118,12 +140,25 @@
     <script defer src="{% static 'js/cms.js' %}"></script>
     <script defer src="{% static 'js/cms/content/siteManager.js' %}"></script>
     <script src="{% static 'js/cms/content/save-text.js' %}"></script>
+    <!-- Needed for Galery -->
+    <script type="text/javascript" src="{% static 'js/cms/slick/slick.min.js' %}"></script>
+    <script>
+        $('.carousel').slick({
+        dots: true,  // Display navigation dots
+        arrows: true,  // Display navigation arrows
+        infinite: true,  // Enable infinite looping
+        slidesToShow: 1,  // Number of slides to show at once
+        slidesToScroll: 1,  // Number of slides to scroll at a time
+        autoplay: true,
+        autoplaySpeed: 3000,
+        // Add any other configuration options as needed
+    });
+    </script>
     <script defer>
         $(document).ready(function () {
-            loadImages(false);
+            loadGalerien(false);
         })
     </script>
-    <!-- Needed for Galery -->
     {% endcompress js %}
     {% endblock javascriptend %}
 

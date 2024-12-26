@@ -636,8 +636,9 @@ def site_view_main_tankstelle(request):
     data = {}
     if TextContent.objects.filter(name="main_tanke").exists():
         data["textContent"] = TextContent.objects.get(name='main_tanke')
-    if fileentry.objects.filter(place='main_tanke').exists():
-        data["tankeImage"] = fileentry.objects.get(place='main_tanke')
+    # Get Galery for Bus
+    if Galerie.objects.filter(place='main_tanke').exists():
+        data['galeryImages'] = Galerie.objects.get(place='main_tanke').images.all()
     if TextContent.objects.filter(name="main_tanke_text1").exists():
         data["textContent1"] = TextContent.objects.get(name='main_tanke_text1')
     if TextContent.objects.filter(name="main_tanke_text2").exists():
@@ -651,8 +652,9 @@ def site_view_main_autopflege(request):
     data = {}
     if TextContent.objects.filter(name="main_pflege").exists():
         data["textContent"] = TextContent.objects.get(name='main_pflege')
-    if fileentry.objects.filter(place='main_pflege').exists():
-        data["pflegeImage"] = fileentry.objects.get(place='main_pflege')
+    # Get Galery for Bus
+    if Galerie.objects.filter(place='main_pflege').exists():
+        data['galeryImages'] = Galerie.objects.get(place='main_pflege').images.all()
     if TextContent.objects.filter(name="main_pflege_text1").exists():
         data["textContent1"] = TextContent.objects.get(name='main_pflege_text1')
     if TextContent.objects.filter(name="main_pflege_text2").exists():
